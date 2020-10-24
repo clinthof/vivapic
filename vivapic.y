@@ -5,6 +5,7 @@
 
     #include "vivapic.h"
 
+    setup();
     int yylex();
     int yyerror(const char* s);
 
@@ -19,15 +20,20 @@
 
 %}
 
-%error-verbose
+%define parse.error verbose
+
+%start point
+%start vector
+%start circle
+%start block
 
 %union{
   int iVal;
   float fVal;
 }
 
-%token <iVal> INT
-%token <fVal> FLOAT
+%type<iVal> INT
+%type<fVal> FLOAT
 
 %token END
 %token END_STATEMENT
