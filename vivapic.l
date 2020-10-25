@@ -22,7 +22,3 @@
 .                        {printf("Not a command.\n");}
 
 %%
-
-int main (int argc, char** argv) {
-  yylex();
-}
